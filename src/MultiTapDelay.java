@@ -15,7 +15,7 @@ import com.cycling74.msp.*;
 
 public class MultiTapDelay extends MSPPerformer
 {
-    private float sampleRate = 44100;									//Some basic initialization and declrearing all the needed Variables that are shared by all the taps...//
+    private float sampleRate = 96000;									//Some basic initialization and declrearing all the needed Variables that are shared by all the taps...//
     private int bufferLength = 132301;									// If you want longer delay times change this value!//
     private float dryGain = 0.5f, wetGain = 0.5f, tempOutput;
     private int  pointerIn = 0, maxTapAmount = 100, tapAmount = 4;
