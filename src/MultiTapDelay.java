@@ -15,7 +15,7 @@ import com.cycling74.msp.*;
 
 public class MultiTapDelay extends MSPPerformer
 {
-    private float sampleRate = 44100;									//Some basic initialization and declrearing all the needed Variables that are shared by all the taps...//
+    private float sampleRate;									//Some basic initialization and declrearing all the needed Variables that are shared by all the taps...//
     private int bufferLength = 132301;									// If you want longer delay times change this value!//
     private float dryGain = 0.5f, wetGain = 0.5f, tempOutput;
     private int  pointerIn = 0, maxTapAmount = 100, tapAmount = 4;
@@ -114,9 +114,6 @@ public class MultiTapDelay extends MSPPerformer
 
     public void dspsetup(MSPSignal[] ins, MSPSignal[] outs)
     {
-		/*Lieber Martin, ich habe herausgefunden, wie man die Vektorgrösse, Samplingrate etc. abfragen kann!
-		Es sind Attribute der in- und Outputvektoren. Die dspsetup-Funktion wird jedesmal aufgerufen, wenn das
-		Audio im Maxpatch gestartet wird; sie ist also der perfekte Ort um diese Abfrage zu machen.*/
         sampleRate = (int)ins[0].sr;
     }
 
